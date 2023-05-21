@@ -1,0 +1,87 @@
+.clock {
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 50vh;
+  width: 50vh;
+  padding: 1em;
+  position: relative;
+  border: 9px solid #1c2226;
+  box-shadow: 0 0 6px #1a5285, inset 0 0 9px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock_interior_board {
+  position: absolute;
+  background-color: #1c2226;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  z-index: 1;
+}
+.clock__hours {
+  width: 0.1em;
+  height: 90%;
+  border-radius: 10px;
+  background-color: #eef5fa;
+  position: absolute;
+  box-shadow: 0 0 3px #eef5fa;
+}
+.clock__hours_1_7 {
+  transform: rotate(30deg);
+}
+.clock__hours_2_8 {
+  transform: rotate(60deg);
+}
+.clock__hours_3_9 {
+  transform: rotate(90deg);
+}
+.clock__hours_4_10 {
+  transform: rotate(120deg);
+}
+.clock__hours_5_11 {
+  transform: rotate(150deg);
+}
+.clock__hourhand {
+  position: absolute;
+  height: 50%;
+  top: 10%;
+  border-radius: 50% 50% 0 0;
+  transform-origin: center 80%;
+  background-color: #eef5fa;
+  width: 1.5em;
+  z-index: 2;
+}
+.clock__minutehand {
+  position: absolute;
+  height: 50%;
+  top: 10%;
+  border-radius: 50% 50% 0 0;
+  transform-origin: center 80%;
+  background-color: #1a5285;
+  width: 0.8em;
+  z-index: 3;
+}
+.clock__secondhand {
+  position: absolute;
+  height: 50%;
+  top: 10%;
+  border-radius: 50% 50% 0 0;
+  transform-origin: center 80%;
+  background-color: #fa3636;
+  width: 0.2em;
+  z-index: 4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #1c2226;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */

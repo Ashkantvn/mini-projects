@@ -1,0 +1,69 @@
+@use "../abstracts";
+
+.clock {
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 50vh;
+  width: 50vh;
+  padding: 1em;
+  position: relative;
+  border: 9px solid abstracts.$dark-Turquoise;
+  box-shadow: 0 0 6px abstracts.$blue-Turquoise,
+    inset 0 0 9px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ///interior board
+  &_interior_board {
+    position: absolute;
+    background-color: abstracts.$dark-Turquoise;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  ///hour numbers
+  &__hours {
+    width: 0.1em;
+    height: 90%;
+    border-radius: 10px;
+    background-color: abstracts.$light-Turquoise;
+    position: absolute;
+    box-shadow: 0 0 3px abstracts.$light-Turquoise;
+
+    &_1_7 {
+      transform: rotate(30deg);
+    }
+
+    &_2_8 {
+      transform: rotate(60deg);
+    }
+
+    &_3_9 {
+      transform: rotate(90deg);
+    }
+
+    &_4_10 {
+      transform: rotate(120deg);
+    }
+
+    &_5_11 {
+      transform: rotate(150deg);
+    }
+  }
+
+  ///hands
+  &__hourhand {
+    @include abstracts.hands(abstracts.$light-Turquoise, 1.5em, 2);
+  }
+  &__minutehand {
+    @include abstracts.hands(abstracts.$blue-Turquoise, 0.8em, 3);
+  }
+  &__secondhand {
+    @include abstracts.hands(abstracts.$seconds-hand, 0.2em, 4);
+  }
+
+}
