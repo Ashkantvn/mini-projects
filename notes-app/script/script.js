@@ -2,12 +2,12 @@
 const formInput = document.getElementById('form-input');
 const notesInput = document.getElementById('notes-input');
 const notesBox = document.getElementById('notes-box');
-//////local storage datas
+//////local storage data
 let lastId = 0;
 let description = '';
 const notes = [];
 const localStorageItems = JSON.parse(localStorage.getItem('notes-data'));
-////////
+/////map local storage items in DOM
 if (localStorageItems) {
     localStorageItems.map((localStorageItem) => {
         lastId = localStorageItem.id;
@@ -33,6 +33,8 @@ function showDOM() {
         ////////delete from dom and local storage  
         delButton.onclick = () => {
             savedNoteBox.remove();
+            localStorage.removeItem("notes-data");
+            if(notes.length<=1){return}
             notes.splice(item.id - 1, 1);
             for (let i = 0; i < notes.length; i++) {
                 if (i >= item.id - 1) {
